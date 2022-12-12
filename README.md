@@ -16,22 +16,16 @@ You can use the source code in your project directly.
 But it becomes more easily to use conan. 
 
 1. Install conan first according to this [reference](https://docs.conan.io/en/latest/installation.html).
-2. I have publish this lib to my own repo, so set up remote first:
-
-   ```
-   conan remote add bennyhuo https://api.bintray.com/conan/bennyhuo/conan-bennyhuo
-   ```
-
-3. add it to your conan.txt:
+2. add it to your conan.txt:
 
    ```
    [requires]
    ...
-   tinycthreadpool/1.0@bennyhuo/testing
+   tinycthreadpool/1.0
 
    ```
 
-4. At last, install or build the lib with conan automatically.
+3. At last, install or build the lib with conan automatically.
 
    ```
    conan install <path to conan.txt> --build=missing
