@@ -1,18 +1,18 @@
 /*
  * Copyright (c) 2016, Mathias Brossard <mathias@brossard.org>.
  * All rights reserved.
- * 
+ *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are
  * met:
- * 
+ *
  *  1. Redistributions of source code must retain the above copyright
  *     notice, this list of conditions and the following disclaimer.
- * 
+ *
  *  2. Redistributions in binary form must reproduce the above copyright
  *     notice, this list of conditions and the following disclaimer in the
  *     documentation and/or other materials provided with the distribution.
- * 
+ *
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
  * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
  * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
@@ -37,8 +37,6 @@
 #include <pthread.h>
 #include <unistd.h>
 #endif
-
-#include "tinycthread.h"
 
 #include "threadpool.h"
 
@@ -254,7 +252,7 @@ int threadpool_free(threadpool_t *pool)
     if(pool->threads) {
         free(pool->threads);
         free(pool->queue);
- 
+
         /* Because we allocate pool->threads after initializing the
            mutex and condition variable, we're sure they're
            initialized. Let's lock the mutex just in case. */
@@ -262,7 +260,7 @@ int threadpool_free(threadpool_t *pool)
         mtx_destroy(&(pool->lock));
         cnd_destroy(&(pool->notify));
     }
-    free(pool);    
+    free(pool);
     return 0;
 }
 
