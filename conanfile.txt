@@ -1,0 +1,6 @@
+[requires]
+tinycthread/cci.20161001
+
+[generators]
+CMakeDeps
+CMakeToolchain
